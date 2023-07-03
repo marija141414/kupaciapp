@@ -56,6 +56,7 @@
   max-width: 200px;
   box-shadow: 13px 15px 24px 0px rgba(0, 0, 0, 0.48);
   background-color: #f7efef;
+  
 }
 
 .card-img-top {
@@ -67,6 +68,7 @@
 
 .card-body {
   margin: 10px;
+  
 }
 
 .btn {
@@ -89,18 +91,33 @@ a {
 
 .loved-container {
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loved-item {
+  flex-basis: calc(33.33% - 20px);
+  margin: 10px;
+}
+
+.title-loved{
+  text-align: center;
 }
 
 .card-loved {
   display: flex;
-  flex-direction: row;
+  /* flex-direction:  */
   border-style: solid;
   border-width: 2px;
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 400px;
+  min-width: 400px;
   box-shadow: 13px 15px 24px 0px rgba(0, 0, 0, 0.48);
   background-color: #f7efef;
+  align-items: center;
 }
 
 .card-img-left {
@@ -134,8 +151,6 @@ a {
   font-size: 16px;
 }
 
-
-
 .page-container {
   display: flex;
   justify-content: center;
@@ -153,20 +168,93 @@ a {
   
 }
 
-
-
-
-
-button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+ 
 }
 
+.cont-black {
+  background-color: white;
+  background-attachment: fixed;
+  padding: 30px;
+  border-radius: 10px;
+  width: 30%;
+  
+}
 
+.title {
+  color: black;
+  text-align: center;
+  
+}
 
+.form-group {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  align-self: center;
+}
 
+.lbl {
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
 
+.input--style-3 {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn1 {
+  background-color: #45aaed;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.btn1:hover {
+  background-color: #45a049;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination li {
+  margin-right: 10px;
+}
+
+.pagination button {
+  background-color: #f2f2f2;
+  color: #333;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.pagination li.active button {
+  background-color: #999;
+  color: #fff;
+}
 

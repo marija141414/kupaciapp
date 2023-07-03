@@ -97,33 +97,12 @@ function App() {
     setLovedProducts(newProducts);
   };
 
-  let arrayLength = products.length;
+  
 
-  function handleAdd(userData) {
-    let newProducts = products;
-    newProducts[newProducts.length] = userData;
+  const handleAdd = (userData) => {
+    const newProducts = [...products, userData];
     setProducts(newProducts);
-  }
-
-  function AddNewSwimsuit({ handleAdd, arrayLength }) {
-    const [userData, setUserData] = useState({
-      id: arrayLength + 1,
-      title: "",
-      description:"",
-      amount: 0,
-      image: "",
-    });
-  
-    function handleInput(e) {
-      let newProducts = userData;
-      newProducts[e.target.name] = e.target.value;
-  
-      setUserData(newProducts);
-  }
-  }
-
-  
-  
+  }; 
 
   
   return (
@@ -135,7 +114,7 @@ function App() {
 
       <Route path="/" element={<Products products={products} onAdd={addToLoved} onRemove={remFromLoved}/>}/>
       <Route path="/loved" element={<Loved lovedProducts={lovedProducts} />} />
-      <Route path="/new" element={<New handleAdd={handleAdd} arrayLength={arrayLength}/>} />
+      <Route path="/new" element={<New handleAdd={handleAdd} />} />
 
       </Routes>        
 

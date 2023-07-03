@@ -9,8 +9,12 @@ import img5 from './images/Blue.jpg';
 import { useState } from "react";
 import Loved from "./loved";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./footer";
+import New from "./new";
+
 
 function App() {
+  
   const [lovedProducts, setLovedProducts] = useState([]);
   const [lovedNum, setLovedNum] = useState(0);
   const [products, setProducts] = useState([
@@ -59,8 +63,8 @@ function App() {
   const addToLoved = (id) => {
     products.map((product) => {
       if (product.id === id) {
-        if(product.amount > 4){
-          alert("This is a biggest rate. Thank you!");
+        if(product.amount > 0){
+          alert("You already love this model. Thank you!");
         }else {
           product.amount = product.amount + 1;
         const a = lovedNum + 1;
@@ -82,7 +86,7 @@ function App() {
           refreshLoved();
           console.log("product id=", product.id, "amount=", product.amount);
         } else {
-          alert("There is no smaller rate than 1.");
+          alert("You already hate this model...");
         }
       }
     });
@@ -93,18 +97,52 @@ function App() {
     setLovedProducts(newProducts);
   };
 
+  let arrayLength = products.length;
+
+  function handleAdd(userData) {
+    let newProducts = products;
+    newProducts[newProducts.length] = userData;
+    setProducts(newProducts);
+  }
+
+  function AddNewSwimsuit({ handleAdd, arrayLength }) {
+    const [userData, setUserData] = useState({
+      id: arrayLength + 1,
+      title: "",
+      description:"",
+      amount: 0,
+      image: "",
+    });
+  
+    function handleInput(e) {
+      let newProducts = userData;
+      newProducts[e.target.name] = e.target.value;
+  
+      setUserData(newProducts);
+  }
+  }
+
+  
+  
+
   
   return (
+    
     <BrowserRouter>
-      <NavBar lovedNum={lovedNum} />
+      <NavBar lovedNum={lovedNum} />      
+      
       <Routes>
 
       <Route path="/" element={<Products products={products} onAdd={addToLoved} onRemove={remFromLoved}/>}/>
       <Route path="/loved" element={<Loved lovedProducts={lovedProducts} />} />
+      <Route path="/new" element={<New handleAdd={handleAdd} arrayLength={arrayLength}/>} />
 
-      </Routes>
+      </Routes>        
+
+      <Footer />  
       
     </BrowserRouter>
+    
   );
 }
 

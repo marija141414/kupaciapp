@@ -1,14 +1,19 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  background-color: rgb(211, 211, 211);
+  background-color: #45aaed;
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: rgb(175, 175, 175);
   align-items: center;
   min-height: 40px;
-  padding-left: 25px;
+  padding-left: 20px;
   font-size: large;
+}
+
+.main-text{
+  text-align: center;
+  
 }
 
 .loved-items {
@@ -19,7 +24,7 @@
 }
 
 .loved-num {
-  background-color: grey;
+  background-color: black;
   color: white;
   border-radius: 5px;
   text-align: center;
@@ -30,9 +35,17 @@
   margin-left: 5px;
 }
 
+.number-of-loves{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .all-products {
   display: flex;
   margin: 20px;
+  justify-content: center;  
 }
 
 .card {
@@ -41,13 +54,15 @@
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
   max-width: 200px;
+  box-shadow: 13px 15px 24px 0px rgba(0, 0, 0, 0.48);
+  background-color: #f7efef;
 }
 
 .card-img-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   max-width: 200px;
-  max-height: 200px;
+  max-height: 200px;  
 }
 
 .card-body {
@@ -55,7 +70,7 @@
 }
 
 .btn {
-  background-color: cornflowerblue;
+  background-color: #45aaed;
   color: white;
   padding-top: 10px;
   padding-bottom: 5px;
@@ -84,10 +99,74 @@ a {
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
   max-width: 500px;
+  box-shadow: 13px 15px 24px 0px rgba(0, 0, 0, 0.48);
+  background-color: #f7efef;
 }
 
 .card-img-left {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
+.footer {
+  background-color: #45aaed;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.button{
+  background-color:#45aaed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+  
+}
+
+
+
+
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
 
